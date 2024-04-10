@@ -12,5 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface OrderMapper extends BaseMapper<OrderDO> {
      int createOrder(OrderDO orderDTO);
 
-    int updatePayOrder(OrderDO order);
+    int updatePayOrderStaus(OrderDO order);
+
 }

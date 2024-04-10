@@ -37,4 +37,10 @@
                 #{LocalDateTime}
                 )
     </insert>
+
+    <update id="updatePayOrderStaus" parameterType="com.hixtrip.sample.infra.db.dataobject.OrderDO">
+    update order set
+    payStatus=#{payStatus}
+    where id=#{id}
+    </update>
 </mapper>

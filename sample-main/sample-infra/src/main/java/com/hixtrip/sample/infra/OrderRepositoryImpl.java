@@ -41,13 +41,13 @@ public class OrderRepositoryImpl implements OrderRepository {
      * @return
      */
     @Override
-    public int updatePayOrder(CommandPay commandPay) {
+    public int updatePayOrderStaus(CommandPay commandPay) {
         OrderDO orderdo=new OrderDO();
         String status=commandPay.getPayStatus();
         String orderId=commandPay.getOrderId();
         orderdo.setId(orderId);
         orderdo.setPayStatus(status);
-        int count=orderMapper.updatePayOrder(orderdo);
+        int count=orderMapper.updatePayOrderStaus(orderdo);
         return count;
     }
 }

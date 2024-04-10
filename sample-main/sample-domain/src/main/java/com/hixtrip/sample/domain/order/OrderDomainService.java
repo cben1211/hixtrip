@@ -57,7 +57,7 @@ public class OrderDomainService {
     public void orderPaySuccess(CommandPay commandPay) throws Exception {
         //需要你在infra实现, 自行定义出入参
         //更新订单的支付状态
-        orderRepository.updatePayOrder(commandPay);
+        orderRepository.updatePayOrderStaus(commandPay);
         //支付回调处理  使用策略模式
         PayCallbackContext payCallbackContext=new PayCallbackContext();
         payCallbackContext.finalPayCallback(commandPay);
@@ -71,7 +71,7 @@ public class OrderDomainService {
     public void orderPayFail(CommandPay commandPay) throws Exception {
         //需要你在infra实现, 自行定义出入参
         //更新订单的支付状态
-        orderRepository.updatePayOrder(commandPay);
+        orderRepository.updatePayOrderStaus(commandPay);
         //支付回调处理  使用策略模式
         PayCallbackContext payCallbackContext=new PayCallbackContext();
         payCallbackContext.finalPayCallback(commandPay);

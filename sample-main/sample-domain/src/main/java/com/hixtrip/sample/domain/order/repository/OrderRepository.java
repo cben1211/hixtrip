@@ -11,7 +11,7 @@ public interface OrderRepository {
     //创建订单接口
     int createOrder(Order order);
 
-    //支付
-    int updatePayOrder(CommandPay commandPay);
+    //更新支付订单状态
+    int updatePayOrderStaus(CommandPay commandPay);
 
 }
