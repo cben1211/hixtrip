@@ -1,23 +1,20 @@
-package com.hixtrip.sample.domain.order.model;
+package com.hixtrip.sample.client.order.vo;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
- * 订单表(充血模型)
+ * 订单返回对象
+ * @author  czy
  */
 @Data
+@Builder
 @NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(callSuper = false)
-@SuperBuilder(toBuilder = true)
-public class Order {
+public class OrderVO {
 
     /**
      * 订单号
@@ -81,15 +78,6 @@ public class Order {
      */
     private LocalDateTime updateTime;
 
-
-    /**
-     *  计算订单中的金额并设置
-     * @param amount
-     * @param skuPrice
-     */
-    public void calculateAndSetMoney(Integer amount, BigDecimal skuPrice) {
-        if(amount!=null){
-           this.setMoney(skuPrice.multiply(new BigDecimal(amount)));
-        }
-    }
+    private String code;
+    private String msg;
 }

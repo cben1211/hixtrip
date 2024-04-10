@@ -21,6 +21,7 @@ public class CommandPayDTO {
 
     /**
      * 支付状态
+     * 0表示待支付,1表示已支付,2表示已取消,3表示已退款
      */
     private String payStatus;
 
